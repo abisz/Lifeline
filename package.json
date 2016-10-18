@@ -1,0 +1,14 @@
+{
+  "name": "lifeline",
+  "version": "1.0.0",
+  "description": "A digital tool for a multiplayer board game",
+  "main": "index.js",
+  "author": "Simon Reinsperger",
+  "license": "MIT",
+  "dependencies": {
+    "babel-standalone": "^6.17.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "redux": "^3.6.0"
+  }
+}
