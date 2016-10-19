@@ -62,6 +62,10 @@ const deckReducer = (state, action) => {
   }
 };
 
+function getTotalSize (state) {
+  return getDeckSize(state.deck) + getDeckSize(state.safeCards);
+}
+
 function getDeckSize (deck) {
   let counter = 0;
   for (let type in deck) {
