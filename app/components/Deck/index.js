@@ -10,7 +10,7 @@ var Deck = React.createClass({
       <div>
         <div className="card nextCard noselect"
           onClick={this.nextCard}
-        >Nächste Karte</div>
+        ><h1>Nächste Karte</h1></div>
       </div>
     );
   }

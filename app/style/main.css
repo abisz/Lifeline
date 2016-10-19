@@ -7,14 +7,21 @@ body {
 }
 
 .cardsWrapper {
-	background-color: #999;
 	display: flex;
 	justify-content: center;
-	padding: 2em;
-	margin: 0 2em;
+}
+
+h2 {
+	text-align: center;
+}
+
+.cardsLeft {
+	font-weight: 300;
+	margin-left: .5em;
 }
 
 .card {
+	color: #fff;
 	width: 300px;
 	height: 400px;
 	border-radius: 10px;
@@ -22,20 +29,41 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 2em;
+	margin: 0 1em;
+}
+
+.card h1 {
+	font-size: 10em;
+	text-align: center;
+}
+
+.event h1 {
+	font-size: 2em;
 }
 
 .nextCard {
 	background: #2c3e50;
-	margin-right: 2em;
+}
+
+.nextCard h1 {
+	font-size: 1.75em;
 }
 
 .currentCard {
 	background: #3498db;
 }
 
-.number {
-	font-size: 4em;
-	color: #fff;
+.event {
+	background-color: #d35400;
+}
+
+.empty {
+	background-color: #bdc3c7;
+}
+
+.doomsday {
+	background-color: #c0392b;
 }
 
 .noselect {
