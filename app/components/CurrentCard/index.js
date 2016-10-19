@@ -24,12 +24,30 @@ var CurrentCard = React.createClass({
       default:
         return 'Unbekannte Karte';
     }
+  },
+
+  getClassName: function () {
+    const current = store.getState().current;
+    let className = 'card currentCard noselect';
+
+    if ( ! current ) return className + ' empty';
+
+    switch (current) {
+      case 'one':
+      case 'two':
+      case 'three':
+        return className;
+      case 'doomsday':
+        return className + ' doomsday';
+      default:
+        return className + ' event';
+    }
 
   },
 
   render: function () {
     return (
-      <div className="card currentCard noselect">
+      <div className={ this.getClassName() }>
         <h1 className="number">{ this.getCardLabel() }</h1>
       </div>
     );
