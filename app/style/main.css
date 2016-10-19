@@ -55,6 +55,12 @@ h2 {
 
 .currentCard {
 	background: #3498db;
+	transition: all .2s ease-in;
+}
+
+.colorB {
+	background: #167fc6;
+	transition: all .2s ease-in;
 }
 
 .event {
