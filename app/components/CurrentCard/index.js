@@ -1,8 +1,8 @@
 var CurrentCard = React.createClass({
   render: function () {
     return (
-      <div>
-        <h1>{ store.getState().current }</h1>
+      <div className="currentCard">
+        <h1 className="number">{ store.getState().current }</h1>
       </div>
     );
   }

@@ -8,9 +8,11 @@ var Game = React.createClass({
     return (
       <div className="game-container">
         <h1>Lifeline</h1>
-        <h2>Round {store.getState().round} ({getDeckSize(store.getState().deck)} Cards left)</h2>
-        <Deck/>
-        <CurrentCard/>
+          <div className="cardsWrapper">
+          <h2>Round {store.getState().round} ({getDeckSize(store.getState().deck)} Cards left)</h2>
+          <Deck/>
+          <CurrentCard/>
+        </div>
         <button
         onClick={this.reset}
         >Reset Game</button>
