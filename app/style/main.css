@@ -44,7 +44,7 @@ h2 {
 
 .nextCard {
 	background: #f39c12;
-    animation-name: example;
+    animation-name: pulsing;
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
@@ -67,6 +67,9 @@ h2 {
 
 .doomsday {
 	background-color: #c0392b;
+    animation-name: doomsday;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
 
 button {
@@ -83,8 +86,14 @@ button {
                                   not supported by any browser */
 }
 
-@keyframes example {
+@keyframes pulsing {
     0%   {background-color: #f39c12;}
     50%  {background-color: #ff6600;}
     100% {background-color: #f39c12;}
+}
+
+@keyframes doomsday {
+    0%   {background-color: #c0392b;}
+    50%  {background-color: #96281d;}
+    100% {background-color: #c0392b;}
 }
