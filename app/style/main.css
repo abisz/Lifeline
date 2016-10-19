@@ -1,3 +1,5 @@
+@import url("vendor/normalize.css");
+
 body {
 	font-family: 'Helvetica Neue', Helvetica, Arial;
 	font-size: 16px;
@@ -12,18 +14,36 @@ body {
 	margin: 0 2em;
 }
 
-.currentCard {
-	background: #3498db;
+.card {
 	width: 300px;
-	text-align: center;
 	height: 400px;
 	border-radius: 10px;
+	user-select: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+.nextCard {
+	background: #2c3e50;
+	margin-right: 2em;
+}
+
+.currentCard {
+	background: #3498db;
+}
+
 .number {
 	font-size: 4em;
 	color: #fff;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
 }

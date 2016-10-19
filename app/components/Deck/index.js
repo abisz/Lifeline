@@ -8,9 +8,9 @@ var Deck = React.createClass({
   render: function () {
     return (
       <div>
-        <button
+        <div className="card nextCard noselect"
           onClick={this.nextCard}
-        >Next Card</button>
+        >Nächste Karte</div>
       </div>
     );
   }

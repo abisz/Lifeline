@@ -29,7 +29,7 @@ var CurrentCard = React.createClass({
 
   render: function () {
     return (
-      <div className="currentCard">
+      <div className="card currentCard noselect">
         <h1 className="number">{ this.getCardLabel() }</h1>
       </div>
     );
