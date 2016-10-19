@@ -44,11 +44,9 @@ h2 {
 
 .nextCard {
 	background: #f39c12;
-	transition: all .1s ease-in-out;
-}
-
-.nextCard:hover, .nextCard:active{
-	background-color: #ff8800;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 .nextCard h1 {
@@ -83,4 +81,10 @@ button {
   -ms-user-select: none;       /* Internet Explorer/Edge */
   user-select: none;           /* Non-prefixed version, currently
                                   not supported by any browser */
+}
+
+@keyframes example {
+    0%   {background-color: #f39c12;}
+    50%  {background-color: #ff6600;}
+    100% {background-color: #f39c12;}
 }
