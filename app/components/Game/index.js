@@ -4,9 +4,13 @@ var Game = React.createClass({
     store.dispatch({ type: 'RESET' });
   },
 
+  isSave: function () {
+    return isSafe(store.getState());
+  },
+
   render: function () {
     return (
-      <div className="game-container">
+      <div className={ this.isSave() ? 'game-container safe' : 'game-container' }>
         <h1>Lifeline</h1>
           <div className="cardsWrapper">
           <h2>Round {store.getState().round} ({getDeckSize(store.getState().deck)} Cards left)</h2>
