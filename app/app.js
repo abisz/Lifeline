@@ -18,7 +18,9 @@ const startState = {
 
   round: 0,
 
-  gameOver: false
+  gameOver: false,
+
+  colorMode: 1
 };
 
 const deckReducer = (state, action) => {
@@ -44,6 +46,8 @@ const deckReducer = (state, action) => {
 
       newState.current = randomCard;
       if (randomCard === 'doomsday') newState.gameOver = true;
+
+      newState.colorMode = state.colorMode === 1 ? 2 : 1;
 
       console.log(newState);
       return newState;

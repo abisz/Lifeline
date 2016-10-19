@@ -48,7 +48,8 @@ var CurrentCard = React.createClass({
     return (
       <div className={
         'card currentCard noselect ' +
-        this.getClassName()
+        this.getClassName() +
+        (store.getState().colorMode === 1 ? 'colorA' : 'colorB')
       }>
         <h1>{ this.getCardLabel() }</h1>
       </div>
