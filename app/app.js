@@ -1,12 +1,19 @@
 const startState = {
   deck: {
-    one: 30,
-    two: 40,
-    three: 20,
+    one: 29,
+    two: 39,
+    three: 17,
     doomsday: 1,
     firstPlayerEvent: 1,
     lastPlayerEvent: 1,
-    doubleOrNothing: 2
+    doubleOrNothing: 2,
+    everyOneLoses: 1
+  },
+
+  safeCards: {
+    one: 5,
+    two: 5,
+    three: 1
   },
 
   round: 0,
@@ -19,18 +26,22 @@ const deckReducer = (state, action) => {
   if (typeof state === 'undefined') {
     state = Object.assign({}, startState);
     state.deck = Object.assign({}, startState.deck);
+    state.safeCards = Object.assign({}, startState.safeCards);
   }
 
   switch (action.type) {
     case 'DRAW':
       var randomCard = getRandomCard(state);
-      while (state.round <= 12 && randomCard === 'doomsday') {
-        randomCard = getRandomCard(state);
-      }
 
       var newState = Object.assign({}, state);
       newState.round++;
-      newState.deck[randomCard]--;
+
+      if (isSafe(state)) {
+        newState.safeCards[randomCard]--;
+      } else {
+        newState.deck[randomCard]--;
+      }
+
       newState.current = randomCard;
       if (randomCard === 'doomsday') newState.gameOver = true;
 
@@ -41,6 +52,7 @@ const deckReducer = (state, action) => {
     case 'RESET':
       var resetState = Object.assign({}, startState);
       resetState.deck = Object.assign({}, startState.deck);
+      resetState.safeCards = Object.assign({}, startState.safeCards);
       console.log(resetState);
       return resetState;
 
@@ -55,17 +67,25 @@ function getDeckSize (deck) {
   for (let type in deck) {
     if(deck.hasOwnProperty(type)) counter += deck[type];
   }
+
   return counter;
 }
 
+function isSafe (state) {
+  return getDeckSize(state.safeCards);
+}
+
 function getRandomCard (state) {
-  const random = Math.random() * getDeckSize(state.deck);
   let counter = 0;
 
-  for (let type in state.deck) {
-    if (state.deck.hasOwnProperty(type)) {
-      if ( counter < random && random < ( state.deck[type] + counter ) ) return type;
-      counter += state.deck[type];
+  const deck = getDeckSize(state.safeCards) ? state.safeCards : state.deck;
+
+  const random = Math.random() * getDeckSize(deck);
+
+  for (let type in deck) {
+    if (deck.hasOwnProperty(type)) {
+      if ( counter < random && random < ( deck[type] + counter ) ) return type;
+      counter += deck[type];
     }
   }
 }
