@@ -43,7 +43,12 @@ h2 {
 }
 
 .nextCard {
-	background: #2c3e50;
+	background: #f39c12;
+	transition: all .1s ease-in-out;
+}
+
+.nextCard:hover, .nextCard:active{
+	background-color: #ff8800;
 }
 
 .nextCard h1 {
@@ -64,6 +69,10 @@ h2 {
 
 .doomsday {
 	background-color: #c0392b;
+}
+
+button {
+	margin-top: 2em;
 }
 
 .noselect {
