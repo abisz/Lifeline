@@ -29,8 +29,8 @@ var CurrentCard = React.createClass({
 
   render: function () {
     return (
-      <div>
-        <h1>{ this.getCardLabel() }</h1>
+      <div className="currentCard">
+        <h1 className="number">{ this.getCardLabel() }</h1>
       </div>
     );
   }
